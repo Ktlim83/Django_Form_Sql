@@ -1,0 +1,86 @@
+n [1]: User.objects.create(first_name="Keith",last_name="Lim",email_address="hello@hotmail.com",age=37)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-f568b171c565> in <module>
+----> 1 User.objects.create(first_name="Keith",last_name="Lim",email_address="hello@hotmail.com",age=37)
+
+NameError: name 'User' is not defined
+
+In [2]: from orm_app.models import *
+
+In [3]: User.objects.create(first_name="Keith",last_name="Lim",email_address="hello@hotmail.com",age=37)
+Out[3]: <User: Keith Lim>
+
+In [4]: all_users= User.objects.all()
+
+In [5]: all_users
+Out[5]: <QuerySet [<User: Keith Lim>]>
+
+In [6]: User.objects.create(first_name="Lena",last_name="Tran",email_address="cheese@hotmail.com",age=35)
+Out[6]: <User: Lena Tran>
+
+In [7]: all_users
+Out[7]: <QuerySet [<User: Keith Lim>, <User: Lena Tran>]>
+
+In [8]: User.objects.create(first_name="Jack",last_name="Tran",email_address="woof@hotmail.com",age=8)
+Out[8]: <User: Jack Tran>
+
+In [9]: all_users
+Out[9]: <QuerySet [<User: Keith Lim>, <User: Lena Tran>, <User: Jack Tran>]>
+
+In [10]: first_user = User.objects.first()
+
+In [11]: first-user
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-11-abd07f5ceb09> in <module>
+----> 1 first-user
+
+NameError: name 'first' is not defined
+
+In [12]: first_user
+Out[12]: <User: Keith Lim>
+
+In [13]: last_user = User.objects.last()
+
+In [14]: last_user
+Out[14]: <User: Jack Tran>
+
+In [15]: User.objects.get(id=3)
+Out[15]: <User: Jack Tran>
+
+In [16]: last_user.last_name
+Out[16]: 'Tran'
+
+In [17]: last_user.last_name = "Pancakes"
+
+In [18]: last_user.last_name
+Out[18]: 'Pancakes'
+
+In [19]: last_user
+Out[19]: <User: Jack Pancakes>
+
+In [20]: User.objects.get(id=2)
+Out[20]: <User: Lena Tran>
+
+In [21]: user_two = User.objects.get(id=2)
+
+In [22]: user_two
+Out[22]: <User: Lena Tran>
+
+In [23]: user_two.delete()
+Out[23]: (1, {'orm_app.User': 1})
+
+In [24]: user_two
+Out[24]: <User: Lena Tran>
+
+In [25]: save()
+'' was not found in history, as a file, url, nor in the user namespace.
+
+In [26]: all_users
+Out[26]: <QuerySet [<User: Keith Lim>, <User: Jack Tran>]>
+
+In [27]: User.objects.order_by('first_name')
+Out[27]: <QuerySet [<User: Jack Tran>, <User: Keith Lim>]>
+
+In [28]: User.objects.order_by-('first_name')

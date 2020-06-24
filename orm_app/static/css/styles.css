@@ -1,0 +1,42 @@
+body {
+    background-image: url("../images/beach.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.user_info {
+    font-family: 'Slabo 27px', serif;
+    width: 600px;
+    height: auto;
+}
+
+.new_user_info {
+    font-family: 'Slabo 27px', serif;
+    border: 5px solid rgb(7, 121, 228);
+    background-color: rgb(236, 233, 201);
+    height: auto;
+    width: 600px;
+    padding: 10px 10px 10px 10px;
+}
+
+.table {
+    border: 5px solid rgb(7, 121, 228);
+    background-color: rgb(236, 233, 201);
+
+}
+
+.header {
+    background-color: #3987f4;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(12, 12, 12);
+}
